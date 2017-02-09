@@ -1,0 +1,35 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="col">
+      <h1 class="display-4">Skills</h1>
+      <ul class="list-group">
+        <li *ngFor="let skill of skills; let i = index" class="list-group-item justify-content-between">
+          {{ skill.title }}
+          <span class="badge badge-default badge-pill">{{ skill.experience }} Years</span>
+        </li>
+      </ul>
+    </div>
+    <div class="col-sm-12 col-md-10 col-lg-8">
+      <h1 class="display-4">Summary</h1>
+      <p>
+        {{ personal_summary }}
+      </p>
+      <h2>Experience:</h2>
+      <hr />
+      <div *ngFor="let position of positions; let i = index" class="mt-2">
+        <h4>{{ position.company }}: <small>{{ position.location }}</small></h4>
+        <h5>{{ position.title }}</h5>
+        <p>
+          {{ position.summary }}
+        </p>
+        <h5>Duties:</h5>
+        <ul>
+          <li *ngFor="let responsibilty of position.responsibilities">
+            {{ responsibilty }}
+          </li>
+        </ul>
+        <hr />
+      </div>
+    </div>
+  </div>
+</div>
